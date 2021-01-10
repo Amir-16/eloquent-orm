@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Model\Nid;
+use App\Model\Phone;
 
 class User extends Authenticatable
 {
@@ -41,5 +42,9 @@ class User extends Authenticatable
 
     public function nid(){
         return $this->hasOne(Nid::class);
+    }
+
+    public function phone(){
+      return $this->hasMany(Phone::class);
     }
 }

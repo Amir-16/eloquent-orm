@@ -86,9 +86,8 @@
 
                 <div class="links">
 
-                    {{$nid->user->name}}<br>
-
-                    {{$nid->nid_no}}
+                    {{$user->name}}
+                    {{$user}}
 
 
 
