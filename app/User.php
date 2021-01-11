@@ -44,7 +44,7 @@ class User extends Authenticatable
         return $this->hasOne(Nid::class);
     }
 
-    public function phone(){
+    public function phones(){
       return $this->hasMany(Phone::class);
     }
 }

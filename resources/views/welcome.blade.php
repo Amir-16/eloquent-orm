@@ -84,11 +84,15 @@
                     Information
                 </div>
 
+
+
                 <div class="links">
 
-                    {{$user->name}}
-                    {{$user}}
-
+                    @foreach($cells as $cell)
+                    {{$cell->mbl_no}} <br>
+                    {{$cell->brand}} <br>
+                    
+                    @endforeach
 
 
                 </div>

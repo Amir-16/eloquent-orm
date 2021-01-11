@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use App\Model\Nid;
+use App\Model\Phone;
 class HomeController extends Controller
 {
     /**
@@ -36,15 +37,20 @@ class HomeController extends Controller
 
     //if we want data from Nid
 
-    // public function getInfo(){
-    //   $nid =Nid::where('user_id',Auth::user()->id)->first();
-    //   return view('welcome',compact('nid'));
+    public function getInfo(){
+      $nid =Nid::where('user_id',Auth::user()->id)->first();
+      return view('welcome',compact('nid'));
+    }
+
+    // public function allInfo(){
+    //   $user =User::find(Auth::user()->id);
+    //   return view('welcome',compact('user'));
+
     // }
 
     public function allInfo(){
-      $user =User::find(Auth::user()->id);
-      return view('welcome',compact('user'));
-
+        $cells =Phone::where('user_id',Auth::user()->id)->get();
+        return view('welcome',compact('cells'));
     }
 
 }
