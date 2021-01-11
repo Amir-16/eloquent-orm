@@ -91,6 +91,7 @@
                     @foreach($cells as $cell)
                     {{$cell->mbl_no}} <br>
                     {{$cell->brand}} <br>
+                    {{$cell->user->name}}
                     
                     @endforeach
 
